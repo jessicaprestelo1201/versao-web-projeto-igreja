@@ -1,95 +1,131 @@
-/* app/page.module.css */
 .main {
-  min-height: 100vh;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
 }
 
 .title {
-  font-size: 2rem;
   text-align: center;
-  margin-bottom: 1rem;
-  color: #333;
 }
 
 .description {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #666;
+  margin-bottom: 1rem;
 }
 
 .areaResposta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 5px;
+  margin-bottom: 1rem;
   justify-content: center;
 }
 
 .slot {
-  width: 60px;
-  height: 60px;
-  border: 2px dashed #ccc;
-  border-radius: 8px;
+  width: 70px;
+  height: 90px;
+  border: 1px solid #ccc;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.livrosDisponiveis {
+.livroDetalhado {
+  width: 70px;
+  height: 90px;
+  border-radius: 5px;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.livroDetalhado:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.capVers {
+  font-size: 8px;
+  color: #444;
+  font-weight: 500;
+}
+
+.capVersPequeno {
+  font-size: 7px;
+  color: #444;
+  font-weight: 400;
+}
+
+.sigla {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.nomePequeno {
+  font-size: 10px;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.subtitulo {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.livrosContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.livro {
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.livro:hover {
-  transform: scale(1.05);
-}
-
-.livro:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.controles {
-  display: flex;
-  gap: 1rem;
+  gap: 8px;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .botao {
-  padding: 0.5rem 1rem;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 700;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #0066cc;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
-.botao:hover {
-  background-color: #45a049;
+.botao:hover:not(:disabled) {
+  background-color: #004a99;
 }
 
-.resultado {
+.acerto {
+  color: green;
+  font-weight: 700;
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.erro {
+  color: red;
+  font-weight: 700;
+  text-align: center;
   margin-top: 1rem;
 }
