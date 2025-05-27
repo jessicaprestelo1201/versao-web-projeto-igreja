@@ -1,131 +1,105 @@
 .main {
-  padding: 1rem;
-  max-width: 800px;
-  margin: auto;
-  font-family: Arial, sans-serif;
+  padding: 2rem;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .title {
-  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .description {
-  text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #555;
 }
 
 .areaResposta {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 1rem;
+  gap: 8px;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .slot {
-  width: 70px;
+  width: 90px;
   height: 90px;
-  border: 1px solid #ccc;
+  border: 2px dashed #ccc;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-}
-
-.livroDetalhado {
-  width: 70px;
-  height: 90px;
-  border-radius: 5px;
-  color: #222;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  cursor: pointer;
-  user-select: none;
-  box-sizing: border-box;
-  font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.livroDetalhado:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.capVers {
-  font-size: 8px;
-  color: #444;
-  font-weight: 500;
-}
-
-.capVersPequeno {
-  font-size: 7px;
-  color: #444;
-  font-weight: 400;
-}
-
-.sigla {
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.nomePequeno {
-  font-size: 10px;
-  color: #333;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.1;
-}
-
-.subtitulo {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  font-size: 1.2rem;
 }
 
 .livrosContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.controles {
+.livroDetalhado {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  padding: 4px;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.botao {
-  padding: 0.5rem 1.2rem;
-  font-weight: 700;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 12px;
+  border: 1px solid #999;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: #0066cc;
+}
+
+.capVers, .capVersPequeno {
+  font-size: 10px;
+  color: #333;
+}
+
+.capVersPequeno {
+  font-size: 9px;
+}
+
+.sigla {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nomePequeno {
+  font-size: 10px;
+  color: #222;
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.legenda {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.linhasLegenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.linhasLegenda span {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
   color: white;
-  transition: background-color 0.3s ease;
-}
-
-.botao:hover:not(:disabled) {
-  background-color: #004a99;
-}
-
-.acerto {
-  color: green;
-  font-weight: 700;
+  font-weight: bold;
+  min-width: 80px;
   text-align: center;
-  margin-top: 1rem;
-}
-
-.erro {
-  color: red;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 1rem;
 }
