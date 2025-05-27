@@ -28,7 +28,7 @@ const todosLivros = [
   { sigla: "Sl", nome: "Salmos", cor: "#def", categoria: "Poesia" },
   { sigla: "Pv", nome: "Provérbios", cor: "#def", categoria: "Poesia" },
   { sigla: "Ec", nome: "Eclesiastes", cor: "#def", categoria: "Poesia" },
-  { sigla: "Ct", nome: "Cânticos", cor: "#def", categoria: "Poesia" },
+  { sigla: "Ct", nome: "Cantares", cor: "#def", categoria: "Poesia" },
 
 
   { sigla: "Is", nome: "Isaías", cor: "#dff", categoria: "Profetas Maiores" },
@@ -202,9 +202,10 @@ export default function JogoBiblia() {
       </div>
 
       <div className={styles.botoes}>
-        <button onClick={verificar}>Verificar</button>
-        <button onClick={resetar}>Resetar</button>
-      </div>
+  <button className={styles.botaoCustom} onClick={verificar}>Verificar</button>
+  <button className={styles.botaoCustom} onClick={resetar}>Resetar</button>
+</div>
+
 
       {resultado && <p>{resultado}</p>}
     </main>

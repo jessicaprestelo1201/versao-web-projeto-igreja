@@ -103,3 +103,29 @@
   min-width: 80px;
   text-align: center;
 }
+
+.botaoCustom {
+  background-color: #4caf50; /* verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botaoCustom:hover {
+  background-color: #45a049; /* verde escuro no hover */
+}
+
+.botaoCustom:active {
+  background-color: #397d3a; /* mais escuro quando clica */
+}
+
+.botoes {
+  display: flex;
+  gap: 1rem; /* ou 10px, 16px, etc. */
+  justify-content: center; /* opcional: centraliza os botões */
+  margin-top: 1rem; /* espaço do conteúdo de cima */
+}
