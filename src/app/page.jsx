@@ -57,11 +57,7 @@ const todosLivros = [
   { sigla: "Mc", nome: "Marcos", cor: "#cdf", categoria: "Evangelhos" },
   { sigla: "Lc", nome: "Lucas", cor: "#cdf", categoria: "Evangelhos" },
   { sigla: "Jo", nome: "João", cor: "#cdf", categoria: "Evangelhos" },
-
-
   { sigla: "At", nome: "Atos", cor: "#dfd", categoria: "História" },
-
-
   { sigla: "Rm", nome: "Romanos", cor: "#ffc", categoria: "Cartas de Paulo" },
   { sigla: "1Co", nome: "1 Coríntios", cor: "#ffc", categoria: "Cartas de Paulo" },
   { sigla: "2Co", nome: "2 Coríntios", cor: "#ffc", categoria: "Cartas de Paulo" },
@@ -96,6 +92,7 @@ export default function JogoBiblia() {
   const [livrosNovo, setLivrosNovo] = useState([]);
   const [resposta, setResposta] = useState([]);
   const [resultado, setResultado] = useState("");
+  const [progresso, setProgresso] = useState(""); // <- NOVO
 
   useEffect(() => {
     embaralharLivros();
@@ -123,15 +120,28 @@ export default function JogoBiblia() {
   const verificar = () => {
     const estaCorreto = todosLivros.every((livro, i) => livro.sigla === resposta[i]?.sigla);
     setResultado(estaCorreto ? "✅ Ordem Correta!" : "❌ Ordem Incorreta");
+
+    // NOVO: Verificar progresso parcial
+    const ateOndeAcertou = resposta.findIndex((l, i) => l.sigla !== todosLivros[i]?.sigla);
+    if (estaCorreto) {
+      setResultado("Você está no caminho certo! Tudo certo até agora.");
+    } else if (ateOndeAcertou === -1) {
+      setResultadoo("Você está no caminho certo até o fim da sua resposta.");
+    } else if (ateOndeAcertou === 0) {
+      setResultado("⚠️ Comece novamente, a ordem inicial já está errada.");
+    } else {
+      setProgresso(`Você acertou até o livro de número ${ateOndeAcertou}. Continue assim!`);
+    }
   };
 
   const resetar = () => {
     setResposta([]);
     setResultado("");
+    setProgresso(""); // <- resetar também o progresso
     embaralharLivros();
   };
-
   return (
+    
     <main className={styles.main}>
       <h1 className={styles.title}>Ordem dos Livros Bíblicos</h1>
       <p className={styles.description}>Selecione os livros na ordem correta</p>
