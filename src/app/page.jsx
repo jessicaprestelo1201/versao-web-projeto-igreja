@@ -124,11 +124,11 @@ export default function JogoBiblia() {
     // NOVO: Verificar progresso parcial
     const ateOndeAcertou = resposta.findIndex((l, i) => l.sigla !== todosLivros[i]?.sigla);
     if (estaCorreto) {
-      setResultado("Você está no caminho certo! Tudo certo até agora.");
+      setProgresso("Você está no caminho certo! Tudo certo até agora.");
     } else if (ateOndeAcertou === -1) {
-      setResultadoo("Você está no caminho certo até o fim da sua resposta.");
+      setProgresso("Você está no caminho certo até o fim da sua resposta.");
     } else if (ateOndeAcertou === 0) {
-      setResultado("⚠️ Comece novamente, a ordem inicial já está errada.");
+      setProgresso("⚠️ Comece novamente, a ordem inicial já está errada.");
     } else {
       setProgresso(`Você acertou até o livro de número ${ateOndeAcertou}. Continue assim!`);
     }
@@ -140,6 +140,7 @@ export default function JogoBiblia() {
     setProgresso(""); // <- resetar também o progresso
     embaralharLivros();
   };
+  
   return (
     
     <main className={styles.main}>
