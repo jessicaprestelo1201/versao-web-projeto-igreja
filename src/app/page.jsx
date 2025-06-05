@@ -218,7 +218,11 @@ export default function JogoBiblia() {
 </div>
 
 
-      {resultado && <p>{resultado}</p>}
+{resultado && <p>{resultado}</p>}
+{progresso && <p>{progresso}</p>}
+
+
+      
     </main>
   );
 }
